@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refferals</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <meta name="theme-color" content="#f19e36" />
+
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+</head>
+<?php require('includes/functions.php');
+$data['ref_code']=$user['user_code'];
+$reflist = getRefList($data);
+?>
+
+<body class="frens">
+    
+    <div class="haeder">
+        <a href="index.html">
+            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11.9299H2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.00009 19L2.84009 14C2.5677 13.7429 2.35071 13.433 2.20239 13.0891C2.05407 12.7452 1.97754 12.3745 1.97754 12C1.97754 11.6255 2.05407 11.2548 2.20239 10.9109C2.35071 10.567 2.5677 10.2571 2.84009 10L8.00009 5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="frens-main">
+
+        <div class="frens-count">
+
+            <span>Referral system</span>
+        </div>
+<div class="col-6 m-auto mt-5">
+   <h1><?=$user['full_name']?>, Thank you for using DaphCoin</h1>
+   <p><?=$user['email_id']?> - (reffered by <?=$user['full_name']?>)</p>
+        
+.….
+            
+
+            
+        </div>
+    </div>
+
+
+    
+
+        <div class="frens-help-box">
+            <div class="frens-help-content">
+                <div class="frens-help-image">
+                    <img src="./assets/images/apple.svg" width="50px">
+                </div>
+                <div class="fren-help-text">
+                    <h5>Earn Airdrop Money</h5>
+                    <div>
+                        <img src="./assets/images/apple.svg" width="15px">
+                        <span>1Ref=1USDT(DaphCoins)</span>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="frens-open-detail">
+                <a href="guid.html">Detail is here</a>
+            </div>
+        </div>
+    </div>
+    <div class="frens-help">
+        <div class="frens-help-title">
+            <h2>Invite More friends and Earn daphCoins! </h2><br>
+            <h3>Minimum refferals are 7 for Airdrop eligibility.</h3><br>
+            <span>To be eligible for the airdrop, a minimum of 7 referrals is required. Any attempt to scam, such as using multiple logins on the same device, will lead to account suspension and loss of airdrop eligibility.
+
+</span><br>
+                
+                    <span> Invite your friends using your own referral code.</span><br>
+                        <span> Earn  daphCoins of 1USDT with every new sign-up you invite!</span><br>
+        </div>
+ 
+ 
+   <div class="bg-success p-2 text-white m-2" role="alert" style="border-radius:5px;">
+   <h1>Earnings For Airdrop is $ <?=count($reflist)*1?></h1>
+</div>
+<h5>Your Referel Code : <?=$user['user_code']?> </h5>
+
+   <div class="alert alert-warning" role="alert">
+   http://t.me/daphCoin/?refcode=<?=$user['user_code']?>
+</div>
+<h6>User Referred by you</h5>
+<ol>
+<?php
+
+
+foreach($reflist as $u){
+?>
+<li><?=$u['full_name']?></li>
+<?php
+}
+?>
+</ol>
+</div>
+   <script src="./assets/js/js.js"></script>
+    <script src="./assets/js/charge.js"></script>
+
+</body>
+</html>
